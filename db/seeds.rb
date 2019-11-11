@@ -6,10 +6,10 @@ Venue.destroy_all
 Artist.destroy_all
 Event.destroy_all
 
-beyonce = Artist.find_or_create_by(name: "Beyonce")
-metallica = Artist.find_or_create_by(name: "Metallica")
-taking_back_sunday = Artist.find_or_create_by(name: "Taking Back Sunday")
-thrice = Artist.find_or_create_by(name: "Thrice")
+beyonce = Artist.find_or_create_by(name: "Beyonce", artist_id: 1)
+metallica = Artist.find_or_create_by(name: "Metallica", artist_id: 2)
+taking_back_sunday = Artist.find_or_create_by(name: "Taking Back Sunday", artist_id: 3)
+thrice = Artist.find_or_create_by(name: "Thrice", artist_id: 4)
 
 anthem = Venue.find_or_create_by(name: "Anthem", address: "123 Main Street",city: "Washington DC", state: "District", venue_id: 1)
 fedex_field = Venue.find_or_create_by(name: "Fedex Field", address: "1 Fedex Field Road", city: "NFL", state: "MD", venue_id: 2)
