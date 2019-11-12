@@ -11,8 +11,8 @@
         elsif input == "Beyonce"
             puts Artist.where(name: 
             "Beyonce")
-            elsif input == "Quit"
-                return start_menu
+        elsif input == "Quit"
+            return start_menu
         else
             puts "Invalid Input. Please Try Again."
             return artist_sub_menu
@@ -42,20 +42,22 @@
 
     def venue_sub_menu
         puts "Venue Results Loaded"
-        puts "Please type a Venue(Anthem, Fedex Field)"
+        puts "Please type a Venue name"
         puts "Type Quit to return to main screen."
         input = gets.chomp
-        if input == "Anthem"
-            puts Venue.where(name: "Anthem")
-        elsif input == "Fedex Field"
-            puts Venue.where(name: "Fedex Field")
-        elsif input == "Quit"
+        if input == "Quit"
             return start_menu
-        else
-            puts "Invalid Input. Please Try Again."
-            return venue_sub_menu
+        else   
+            user_input = Venue.find_by(name: input)
+            if user_input.nil?
+                puts "Invalid Input. Please Try Again."
+                return venue_sub_menu
+            else 
+                puts user_input
+            end
         end
     end
+    
     
     def start_menu
         puts "Please type an option(Artist, Venue, Location)"
