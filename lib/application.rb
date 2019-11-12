@@ -3,39 +3,38 @@
     
     def artist_sub_menu
         puts "Artist Results Loaded!"
-        puts "Please type an Artist name(Beyonce, Queen)"
+        puts "Please type an Artist name"
         puts "Type Quit to return to main screen."
         input = gets.chomp
-        if input == "Queen"
-            puts Artist.where(name: "Queen")
-        elsif input == "Beyonce"
-            puts Artist.where(name: 
-            "Beyonce")
-        elsif input == "Quit"
+        if input == "Quit"
             return start_menu
-        else
+        else   
+            user_input = Artist.find_by(name: input)
+        if user_input.nil?
             puts "Invalid Input. Please Try Again."
             return artist_sub_menu
+        else 
+            puts user_input
+        end
         end
     end
 
     
     def location_sub_menu
         puts "Location Results Loaded"
-        puts "Please type a Location(MD, VA, DC)"
+        puts "Please type a State (eg: MD)"
         puts "Type Quit to return to main screen."
         input = gets.chomp
-        if input == "VA"
-            puts Venue.where(state: "VA")
-        elsif input == "DC"
-            puts Venue.where(state: "DC")
-        elsif input == "MD"
-            puts Venue.where(state: "MD")
-        elsif input == "Quit"
+        if input == "Quit"
             return start_menu
-        else
+        else   
+            user_input = Venue.where(state: input)
+        if user_input.nil?
             puts "Invalid Input. Please Try Again."
-            return location_sub_menu
+            return venue_sub_menu
+        else 
+            puts user_input
+        end
         end
     end
 
