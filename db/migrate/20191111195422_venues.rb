@@ -5,7 +5,6 @@ class Venues < ActiveRecord::Migration[6.0]
       t.string :address
       t.string :city
       t.string :state
-      t.integer :venue_id
     end
   end
 end
