@@ -6,4 +6,6 @@ gem "sqlite3", '~> 1.4'
 gem "pry"
 gem "require_all"
 gem 'rake'
+gem 'tty-prompt'
+gem 'thor'
 
