@@ -1,12 +1,23 @@
-class CLI < Thor
-    desc "hello [name]", "say my name"
-    def hello(name)
-      if name == "Heisenberg"
-        puts "you're goddamn right"
-      else
-        puts "say my name"
-      end
-    end
-  end
+# class CLI < Thor
+#     desc "Artist", "Venue"
+#     def hello(name)
+#       if name == ""
+#         puts "Artist is #{name}"
+#       else
+#         puts "Try again"
+#        end
+#     end
+#   end
 
-CLI.start(ARGV)
+# CLI.start
+# #(ARGV)
+
+
+    def start
+        puts "Please select an option." 
+        puts "Press 1 to inspect an Artist playing a show in the area."
+        puts "Press 2 to inspect Venues in the area with upcoming shows"
+        user_input = gets.chomp
+    end
+
+   
