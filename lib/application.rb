@@ -1,14 +1,19 @@
- require_all 'lib'
+require_all 'lib'
     
     
     def artist_sub_menu
         puts "Artist Results Loaded!"
         puts "Please type an Artist name"
         puts "Type Quit to return to main screen."
+        artist_name = Artist.all.map do |artist|
+            artist.name
+        end
+        puts artist_name
         input = gets.chomp
         if input == "Quit"
             return start_menu
         else   
+            # user_input = 
             user_input = Artist.find_by(name: input)
         if user_input.nil?
             puts "Invalid Input. Please Try Again."
@@ -73,7 +78,7 @@
         end
     end
 
-#start_menu 
+start_menu 
    
     
 
