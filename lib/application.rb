@@ -13,13 +13,13 @@ require_all 'lib'
         if input == "Quit"
             return start_menu
         else   
-            # user_input = 
             user_input = Artist.find_by(name: input)
         if user_input.nil?
             puts "Invalid Input. Please Try Again."
             return artist_sub_menu
         else 
-            puts user_input
+            puts user_input.events.all
+            #puts user_input.events
         end
         end
     end
