@@ -27,8 +27,12 @@ require_all 'lib'
     
     def location_sub_menu
         puts "Location Results Loaded"
-        puts "Please type a State (eg: MD)"
+        puts "Please type a State"
         puts "Type Quit to return to main screen."
+        location_state = Venue.all.map do |venue|
+            venue.state
+        end.uniq
+        puts location_state
         input = gets.chomp
         if input == "Quit"
             return start_menu
@@ -48,6 +52,10 @@ require_all 'lib'
         puts "Venue Results Loaded"
         puts "Please type a Venue name"
         puts "Type Quit to return to main screen."
+        venue_name = Venue.all.map do |venue|
+            venue.name
+        end
+        puts venue_name
         input = gets.chomp
         if input == "Quit"
             return start_menu
