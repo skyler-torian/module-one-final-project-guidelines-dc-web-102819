@@ -18,8 +18,21 @@ require_all 'lib'
             puts "Invalid Input. Please Try Again."
             return artist_sub_menu
         else 
-            puts user_input.events.all
-            #puts user_input.events
+            # puts user_input.events.all #this works, but only pulls object_id
+            venues_from_input = user_input.venues
+            # venues_from_input.each do |venue|
+            #     puts venue.name
+            # end
+            venues_from_input.each do |venue|
+                puts venue.name
+                event_artist_is_playing =venue.events.select do |event|
+                    user_input.id == event.artist_id
+                end
+                event_artist_is_playing.each do |event|
+                    puts event.date
+                end
+            end
+
         end
         end
     end
